@@ -31,7 +31,7 @@ namespace College.Repositorio
             CursosModel cursoDB = ListarPorId(curso.Id);
 
             if (cursoDB == null)
-                throw new Exception("Houve um erro na atualização do contato!");
+                throw new Exception("Houve um erro na atualização do curso!");
 
             cursoDB.Site = curso.Site;
             cursoDB.Titulo = curso.Titulo;
@@ -43,6 +43,18 @@ namespace College.Repositorio
             _bancoContext.SaveChanges();
 
             return cursoDB;
+        }
+
+        public bool Apagar(int id) {
+            CursosModel cursoDB = ListarPorId(id);
+
+            if (cursoDB == null)
+                throw new Exception("Houve um erro na deleção do curso!");
+
+            _bancoContext.Cursos.Remove(cursoDB);
+            _bancoContext.SaveChanges();
+
+            return true;
         }
     }
 }

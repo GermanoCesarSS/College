@@ -12,6 +12,7 @@ namespace College.Repositorio
 
         CursosModel Atualizar(CursosModel curso);
 
+        bool Apagar(int id);
         
     }
 }

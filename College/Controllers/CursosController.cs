@@ -21,6 +21,11 @@ namespace College.Controllers
             return View();
         }
 
+        public IActionResult Apagar(int id) {
+            _cursoRepositorio.Apagar(id);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Editar(int id) {
             CursosModel curso = _cursoRepositorio.ListarPorId(id);
             return View(curso);
@@ -28,7 +33,7 @@ namespace College.Controllers
 
         public IActionResult ApagarConfirmacao(int id) {
             CursosModel curso = _cursoRepositorio.ListarPorId(id);
-            return View();
+            return View(curso);
         }
 
         [HttpPost]
