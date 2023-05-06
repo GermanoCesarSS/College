@@ -5,13 +5,26 @@
 
 <hearder class="container text-center">
     
-    <div class="d-grid gap-3 d-md-flex justify-content-md-start">
+    <div class="d-grid gap-3 mb-3 d-md-flex justify-content-md-start">
     <a class="btn btn-primary" role="button" asp-controller="Cursos" asp-action="Criar">Adicionar novo curso</a>
     </div>
 
+    @if(TempData["MensagemSucesso"] != null){
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm btn-close" ></button>
+            @TempData["MensagemSucesso"]
+    </div>
+    }
 
+    @if (TempData["MensagemErro"] != null) {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm btn-close"></button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+    
     <h1>Cursos compartilhados</h1>
-    <!--ROW-->
+    
     <div class="row row-gap ">
 
         @if(Model != null && Model.Any()) {

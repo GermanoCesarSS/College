@@ -14,21 +14,25 @@
     <div class="mb-3">
         <label for="titulo" class="form-label">Título</label>
         <input type="text" asp-for="Titulo" class="form-control" placeholder="Digite o título do curso">
+        @Html.ValidationMessageFor(x => x.Titulo)
     </div>
 
     <div class="mb-3">
         <label for="site" class="form-label">Site</label>
         <input type="text" asp-for="Site" class="form-control" placeholder="Digite o site do curso">
+        @Html.ValidationMessageFor(x => x.Site)
     </div>
 
     <div class="mb-3">
         <label for="duracao" class="form-label">Duração</label>
         <input type="text" asp-for="Duracao" class="form-control" placeholder="Digite a duração do curso">
+        @Html.ValidationMessageFor(x => x.Duracao)
     </div>
 
     <div class="mb-3">
         <label for="link" class="form-label">Link</label>
         <input type="text" asp-for="Link" class="form-control" placeholder="Coloque o link do curso">
+        @Html.ValidationMessageFor(x => x.Link)
     </div>
 
     <div class="mb-3">

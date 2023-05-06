@@ -21,6 +21,19 @@ body {
   margin-bottom: 60px;
 }
 
+.field-validation-error{
+    color: #e01d1d;
+}
+
+.btn-close{
+    position:absolute;
+    right: -8px;
+    top:-8px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}
+
 .col-center {
     display: flex;
     justify-content: center;
