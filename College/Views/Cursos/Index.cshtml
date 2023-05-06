@@ -3,7 +3,7 @@
     ViewData["Title"] = "Cursos compartilhados para você";
 }
 
-<div class="container text-center">
+<hearder class="container text-center">
     
     <div class="d-grid gap-3 d-md-flex justify-content-md-start">
     <a class="btn btn-primary" role="button" asp-controller="Cursos" asp-action="Criar">Adicionar novo curso</a>
@@ -13,32 +13,6 @@
     <h1>Cursos compartilhados</h1>
     <!--ROW-->
     <div class="row row-gap ">
-
-        <!--LINGUAGEM DE PROGRAMAÇÃO JAVA - BÁSICO-->
-        <div class="col col-center">
-            <div class="card sombra" style="width: 18rem; text-align: center">
-                <div class="card-header bg-transparent">
-                    <h5 class="card-title">Linguagem de Programação Java - Básico</h5>
-                </div>
-                <div class="card-body scroll">
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Bradesco <br> Duração: 05h</h6>
-                    <p style="max-height: 4rem;">
-                        Neste curso, você terá uma introdução à linguagem Java e conhecerá conceitos importantes para compreender o Java Development Kit (JDK).
-                        Com esses conhecimentos, será possível entender sua história, o que é portabilidade em Java, o que é bytecode, como instalar o JDK, do que se trata o ambiente de desenvolvimento integrado, como criar o primeiro programa em Java, qual é a estrutura dessa linguagem, entre outras particularidades.
-                        Além disso, serão apresentadas as palavras reservadas na linguagem e seus operadores. Você também conhecerá os conceitos de fluxo de controle e arrays, podendo colocar em prática esse conjunto indexado de informações.
-                        Tudo isso será abordado no decorrer do curso de uma forma bem didática, para você perceber que a linguagem de programação Java pode ser compreendida por todos de uma forma bem descomplicada!
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="https://www.ev.org.br/cursos/linguagem-de-programacao-java-basico" role="button" class="btn btn-success" target="_blank">Acessar</a>
-                        <a role="button" class="btn btn-primary" asp-controller="Cursos" asp-action="Editar">Editar</a>
-                        <a role="button" class="btn btn-danger" asp-controller="Cursos" asp-action="ApagarConfirmacao">Apagar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         @if(Model != null && Model.Any()) {
             foreach (CursosModel curso in Model) {
@@ -57,82 +31,13 @@
                         <div class="card-footer">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="@curso.Link" role="button" class="btn btn-success" target="_blank">Acessar</a>
-                                <a role="button" class="btn btn-primary" asp-controller="Cursos" asp-action="Editar" asp-router-id="@curso.Id">Editar</a>
-                                <a role="button" class="btn btn-danger" asp-controller="Cursos" asp-action="ApagarConfirmacao" asp-router-id="@curso.Id">Apagar</a>
+                                <a role="button" class="btn btn-primary" asp-route-id="@curso.Id" asp-controller="Cursos" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-danger"  asp-route-id="@curso.Id" asp-controller="Cursos" asp-action="ApagarConfirmacao">Apagar</a>
                             </div>
                         </div>
                     </div>
                 </div>
             }
         }
-
-
-        <!--LINGUAGEM DE PROGRAMAÇÃO JAVA - AVANÇADO-->
-        <div class="col col-center">
-            <div class="card sombra" style="width: 18rem; text-align: center">
-                <div class="card-header bg-transparent">
-                    <h5 class="card-title">Linguagem de Programação Java - Avançado</h5>
-                </div>
-                <div class="card-body scroll">
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Bradesco <br> Duração: 16h</h6>
-                    <p style="max-height: 4rem;">
-                        Neste curso, você será apresentado aos principais conceitos relacionados à linguagem de programação Java.
-                        Os fundamentos da Programação Orientada a Objetos (POO) serão evidenciados, passando pelos objetos, as classes, suas construções, além dos complementos da linguagem Java, incluindo conceitos, como pacotes, métodos e herança.
-                        O curso também contempla as ferramentas de desenvolvimento mais completas e ensina como instalá-las.
-                        Por fim, você estudará de modo mais aprofundado o tratamento de exceções, interface gráfica, eventos e integração.
-                    </p>
-                </div>
-                <div class="card-footer botom-centro">
-                    <a href="https://www.ev.org.br/cursos/linguagem-de-programacao-java-avancado" class="btn btn-primary" target="_blank">Acessar</a>
-                </div>
-            </div>
-        </div>
-
-        <!--HTML - BÁSICO-->
-        <div class="col col-center">
-           <div class="card sombra" style="width: 18rem; text-align: center">
-                <div class="card-header bg-transparent">
-                    <h5 class="card-title">HTML - Básico</h5>
-                </div>
-                <div class="card-body scroll">
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Bradesco <br> Duração: 11h</h6>
-                    <p style="max-height: 4rem;">
-                        Este curso foi desenvolvido para auxiliar na criação de páginas Web, por meio do Hyper Text Markup Language – mais conhecido como HTML.
-                        Para quem nunca ouviu falar dessa linguagem de marcação, explicamos que se trata de uma das mais populares. Aquilo que você vê quando abre uma página na Internet é uma interpretação que seu navegador faz do HTML.
-                        Criada por Tim Berners-Lee em 1990, quando desenvolveu a revolucionária World Wide Web, essa linguagem utiliza um formato de código simples, que não precisa da ajuda de aplicativos especiais. Para criar um documento HTML, apenas o bloco de notas do computador já é o suficiente!
-                        Na parte inicial do curso, você se familiarizará ou relembrará os principais termos técnicos relacionados à Internet, com explicações sobre protocolos e linguagem de marcação.
-                        Depois, os conteúdos explicam a importância do HTML, seus principais comandos até chegar às dicas para você criar um documento, formatá-lo, criar listas e muito mais. Para completar, nosso curso ainda apresenta exercícios que o ajudarão a fixar os conceitos apresentados.
-                        Após concluir este curso, você poderá prosseguir seus estudos matriculando-se no HTML – Avançado!
-                    </p>
-                </div>
-                <div class="card-footer botom-centro">
-                    <a href="https://www.ev.org.br/cursos/html-basico" class="btn btn-primary" target="_blank">Acessar</a>
-                </div>
-            </div>
-        </div>
-
-        <!--HTML - AVANÇADO-->
-        <div class="col col-center">
-           <div class="card sombra" style="width: 18rem; text-align: center">
-                <div class="card-header bg-transparent">
-                    <h5 class="card-title">HTML - Avançado</h5>
-                </div>
-                <div class="card-body scroll">
-                    <h6 class="card-subtitle mb-2 text-muted">Fundação Bradesco <br> Duração: 06h</h6>
-                    <p style="max-height: 4rem;">
-                        Dividido em quatro módulos, este curso traz conceitos que complementam o conteúdo apresentado em nosso curso de HTML – Básico.
-                        Agora, você poderá prosseguir seus estudos e aprender a criar e formatar tabelas, frames e formulários, além de documentar páginas.
-                        Todos esses elementos são muito importantes para a criação de páginas Web. As tabelas, por exemplo, são úteis para a organização dos dados e imagens. Já os formulários possibilitam que os usuários interajam com os responsáveis pelo site, o que é essencial para páginas corporativas e afins. Por fim, os frames são usados para dividir uma página, possibilitando a criação de vários documentos HTML que podem ser atualizados separadamente.
-                        Você também conhecerá a tag META para a inserção de metadados que servem para descrever as definições da página, incluir palavras-chaves, entre outros dados que não aparecem para o usuário, mas que são utilizados pelos navegadores e sistemas de busca.
-                        Vale saber: nosso conteúdo apresenta exercícios para a fixação dos conceitos apresentados.
-                    </p>
-                </div>
-                <div class="card-footer botom-centro">
-                    <a href="https://www.ev.org.br/cursos/html-avancado" class="btn btn-primary" target="_blank">Acessar</a>
-                </div>
-            </div>
-        </div>
-
-        <!--FINAL DA ROW-->
     </div>
-</div>
+</hearder>
